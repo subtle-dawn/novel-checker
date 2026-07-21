@@ -1,3 +1,76 @@
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+/* アプリ全体を画面の高さに固定 */
+.app {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* タイトルと説明文は固定 */
+.header {
+  flex-shrink: 0;
+}
+
+/* 原稿欄とチェック結果欄 */
+.workspace {
+  flex: 1;
+  min-height: 0;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 1fr);
+  gap: 24px;
+
+  overflow: hidden;
+}
+
+/* 原稿欄全体を固定 */
+.editor-panel {
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* テキストエリアだけ、残りの高さを使用 */
+.editor-panel textarea {
+  flex: 1;
+  min-height: 0;
+  resize: none;
+}
+
+/* 「0文字」も固定 */
+.text-information {
+  flex-shrink: 0;
+}
+
+/* チェック結果欄 */
+.issues-panel {
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* 「チェック結果」と一括修正ボタンを固定 */
+.issues-header {
+  flex-shrink: 0;
+}
+
+/* 指摘一覧だけをスクロール */
+.issue-list {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+}
+
 #root {
   min-height: 100vh;
 }
@@ -129,16 +202,34 @@ textarea:focus {
   color: #666;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 768px) {
+  html,
+  body,
+  #root {
+    height: auto;
+    overflow: auto;
+  }
+
   .app {
-    padding: 16px;
+    height: auto;
+    min-height: 100vh;
+    overflow: visible;
   }
 
   .workspace {
-    grid-template-columns: 1fr;
+    display: block;
+    overflow: visible;
   }
 
-  textarea {
-    min-height: 55vh;
+  .editor-panel textarea {
+    height: 50vh;
+  }
+
+  .issues-panel {
+    overflow: visible;
+  }
+
+  .issue-list {
+    overflow: visible;
   }
 }
