@@ -51,6 +51,13 @@ textarea {
   font-weight: 700;
 }
 
+.issues-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 8px;
+}
+
 textarea {
   width: 100%;
   min-height: 70vh;
@@ -87,6 +94,12 @@ textarea:focus {
   border: 1px solid #ccc;
   border-radius: 8px;
   background: #fff;
+}
+
+.issue-description {
+  margin: 8px 0;
+  color: #555;
+  line-height: 1.6;
 }
 
 .issue-content {
