@@ -1,0 +1,131 @@
+#root {
+  min-height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button,
+textarea {
+  font: inherit;
+}
+
+.app {
+  width: min(1400px, 100%);
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.header {
+  margin-bottom: 24px;
+}
+
+.header h1 {
+  margin: 0 0 8px;
+  font-size: 28px;
+}
+
+.header p {
+  margin: 0;
+  color: #555;
+}
+
+.workspace {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(280px, 1fr);
+  gap: 24px;
+}
+
+.editor-panel,
+.issues-panel {
+  min-width: 0;
+}
+
+.editor-panel label,
+.issues-panel h2 {
+  display: block;
+  margin: 0 0 8px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+textarea {
+  width: 100%;
+  min-height: 70vh;
+  padding: 20px;
+  border: 1px solid #aaa;
+  border-radius: 8px;
+  line-height: 2;
+  resize: vertical;
+  background: #fff;
+  color: #222;
+}
+
+textarea:focus {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+.text-information {
+  margin-top: 8px;
+  text-align: right;
+  color: #666;
+}
+
+.issue-list {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.issue {
+  padding: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.issue-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: 12px 0;
+}
+
+.issue code {
+  padding: 4px 6px;
+  border-radius: 4px;
+  background: #eee;
+}
+
+.issue button {
+  padding: 8px 12px;
+  border: 1px solid #777;
+  border-radius: 6px;
+  cursor: pointer;
+  background: #fff;
+}
+
+.issue-note,
+.empty-message {
+  color: #666;
+}
+
+@media (max-width: 800px) {
+  .app {
+    padding: 16px;
+  }
+
+  .workspace {
+    grid-template-columns: 1fr;
+  }
+
+  textarea {
+    min-height: 55vh;
+  }
+}
