@@ -222,11 +222,23 @@ textarea:focus {
   }
 
   .editor-panel textarea {
-    height: 50vh;
+    flex: none;
+    height: auto;
+    aspect-ratio: 1 / 1;
   }
 
   .issues-panel {
     overflow: visible;
+  }
+
+  .issues-header {
+    flex-direction: column;
+    gap: 8px;
+    align-items: stretch;
+  }
+
+  .issues-header button {
+    width: 100%;
   }
 
   .issue-list {
